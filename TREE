@@ -1,0 +1,104 @@
+
+DEMO TREE PROJ
+2012-02-17T00:00:00,,70,,1,17-AUG-24 04.11.25.869031 PM +00:00,XXXX@GMAIL.COM,17-AUG-24 04.11.25.869156 PM +00:00,XXXX@GMAIL.COM,2,Training,2012-02-13T00:00:00
+,,80,,1,17-AUG-24 04.11.25.871240 PM +00:00,XXXX@GMAIL.COM,17-AUG-24 04.11.25.871257 PM +00:00,XXXX@GMAIL.COM,3,Software Project Tracking,2012-01-09T00:00:00
+2012-11-30T00:00:00,2012-11-30T00:00:00,100,,1,17-AUG-24 04.11.25.872457 PM +00:00,XXXX@GMAIL.COM,17-AUG-24 04.11.25.872472 PM +00:00,XXXX@GMAIL.COM,1,Maintain Support Systems,2011-11-01T00:00:00
+2012-07-20T00:00:00,,30,,1,17-AUG-24 04.11.25.873509 PM +00:00,XXXX@GMAIL.COM,17-AUG-24 04.11.25.873524 PM +00:00,XXXX@GMAIL.COM,4,Customer Satisfaction Survey,2012-06-20T00:00:00
+2012-03-17T00:00:00,,20,,1,17-AUG-24 04.11.25.874620 PM +00:00,XXXX@GMAIL.COM,17-AUG-24 04.11.25.874636 PM +00:00,MXXXX@GMAIL.COM,5,Upgrade Equipment,2012-03-01T00:00:00
+2012-01-16T00:00:00,2012-01-14T00:00:00,100,,1,17-AUG-24 04.11.25.875732 PM +00:00,XXXX@GMAIL.COM,17-AUG-24 04.11.25.875747 PM +00:00,MXXXX@GMAIL.COMM,6,Public Website,2011-12-21T00:00:00
+2012-03-24T00:00:00,,20,,1,17-AUG-24 04.11.25.876816 PM +00:00,XXXX@GMAIL.COM,17-AUG-24 04.11.25.876831 PM +00:00,XXXX@GMAIL.COM,7,Email Integration,2012-03-18T00:00:00
+2012-03-20T00:00:00,,10,,1,17-AUG-24 04.11.25.877854 PM +00:00,MXXXX@GMAIL.COM,17-AUG-24 04.11.25.877868 PM +00:00,MXXXX@GMAIL.COM,8,Load Software,2012-03-18T00:00:00
+2012-08-01T00:00:00,,0,,1,17-AUG-24 04.11.25.878882 PM +00:00,XXXX@GMAIL.COM,17-AUG-24 04.11.25.878896 PM +00:00,XXXX@GMAIL.COM,9,Bug Tracker,2012-03-01T00:00:00
+
+
+DEMO TREE TASK
+,,,2,100,,,2,17-AUG-24 04.11.26.030122 PM +00:00,XXXX@GMAIL.COMM,17-AUG-24 04.11.26.050050 PM +00:00,MXXXX@GMAIL.COMM,6,4,Reporting
+2024-06-17T16:11:26,2025-07-12T16:11:26,2025-07-11T16:11:26,3,100,,,2,17-AUG-24 04.11.26.032608 PM +00:00,MXXXX@GMAIL.COM,17-AUG-24 04.11.26.050115 PM +00:00,XXXX@GMAIL.COMM,1,1,HR Support Systems
+2024-09-29T16:11:26,,,,70,,,2,17-AUG-24 04.11.26.034199 PM +00:00,MXXXX@GMAIL.COML.COM,17-AUG-24 04.11.26.050156 PM +00:00,XXXX@GMAIL.COM,2,2,Customize solutions
+2024-10-17T16:11:26,2024-10-31T16:11:26,,2,80,,,2,17-AUG-24 04.11.26.035462 PM +00:00,XXXX@GMAIL.COMM,17-AUG-24 04.11.26.050175 PM +00:00,XXXX@GMAIL.COM,3,3,Get RFPs for new server
+2024-10-16T16:11:26,2025-01-16T16:11:26,,1,20,,,2,17-AUG-24 04.11.26.036644 PM +00:00,MUXXXX@GMAIL.COM,17-AUG-24 04.11.26.050193 PM +00:00,XXXX@GMAIL.COMCOM,4,9,Implement bug tracking software
+2025-01-17T16:11:26,2025-02-16T16:11:26,,,20,,,2,17-AUG-24 04.11.26.038421 PM +00:00,MUXXXX@GMAIL.COMCOM,17-AUG-24 04.11.26.050210 PM +00:00,MXXXX@GMAIL.COML.COM,5,9,QA New Application
+
+
+SEMO TREE SUBTASK
+
+IL@GMAIL.COM,17-AUG-24 04.11.26.115423 PM +00:00,MX@GMAIL.COM,10,9,4,Feature Enhancements Development Work,2024-10-17T16:11:26,2025-01-14T16:11:26,,1,,Myra Sutcliff,,2,17-AUG-24 04.11.26.083683 PM +00:00
+IL@GMAIL.COM,17-AUG-24 04.11.26.115497 PM +00:00,MX@GMAIL.COM,11,9,4,Document quality assurance procedures,2025-01-16T16:11:26,2025-01-19T16:11:26,,4,0,Myra Sutcliff,,2,17-AUG-24 04.11.26.085740 PM +00:00
+L@GMAIL.COM,17-AUG-24 04.11.26.115519 PM +00:00,XIL@GMAIL.COM,12,9,4,Review automated testing tools,2025-01-22T16:11:26,2025-01-24T16:11:26,,2,,Myra Sutcliff,,2,17-AUG-24 04.11.26.086833 PM +00:00
+IL@GMAIL.COM,17-AUG-24 04.11.26.115550 PM +00:00X@GMAIL.COM,13,9,4,Measure effectiveness of improved QA,2025-01-29T16:11:26,2025-01-29T16:11:26,,,,Myra Sutcliff,,2,17-AUG-24 04.11.26.087911 PM +00:00
+IL.COM,17-AUG-24 04.11.26.115569 PM +00:00,MXUXL@GMAIL.COM,14,9,3,Train developers on tracking bugs,2025-02-14T16:11:26,2025-02-24T16:11:26,,,0,Myra Sutcliff,,2,17-AUG-24 04.11.26.089063 PM +00:00
+MIL@GMAIL.COM,17-AUG-24 04.11.26.115587 PM +00:00,XXL@GMAIL.COM,14,9,2,Monday Test,2024-10-06T16:11:26,,,5,20,,,2,17-AUG-24 04.11.26.090150 PM +00:00
+MAIL.COM,17-AUG-24 04.11.26.115606 PM +00:00,MXMAIL.COM,16,3,1,Monday testing,2024-10-06T16:11:26,,,,0,,,2,17-AUG-24 04.11.26.091183 PM +00:00
+AIL@GMAIL.COM,17-AUG-24 04.11.26.115662 PM +00:00XL@GMAIL.COM,16,9,1,2nd Monday Test,,,,,0,,,2,17-AUG-24 04.11.26.092190 PM +00:00
+IL@GMAIL.COM,17-AUG-24 04.11.26.115680 PM +00:00XL@GMAIL.COM,16,8,2,Train writers,2024-10-06T16:11:26,,,,40,,,2,17-AUG-24 04.11.26.093240 PM +00:00
+MAIL.COM,17-AUG-24 04.11.26.115697 PM +00:00,MXL@GMAIL.COM,1,1,1,HR software upgrades,2024-06-17T16:11:26,,2024-07-02T16:11:26,3,40,Pam King,,2,17-AUG-24 04.11.26.094285 PM +00:00
+X@GMAIL.COM,17-AUG-24 04.11.26.115714 PM +00:00,MXL@GMAIL.COM,2,1,1,Arrange for vacation coverage,2024-07-14T16:11:26,,2024-07-14T16:11:26,3,Closed,Russ Sanders,,2,17-AUG-24 04.11.26.095379 PM +00:00
+X@GMAIL.COM,17-AUG-24 04.11.26.115731 PM +00:00,MXL@GMAIL.COM,3,1,1,Investigate new Virus Protection software,2024-06-21T16:11:26,,2024-06-22T16:11:26,3,Closed,Pam King,,2,17-AUG-24 04.11.26.096458 PM +00:00
+X@GMAIL.COM,17-AUG-24 04.11.26.115747 PM +00:00,MX@GMAIL.COM,4,2,2,Identify point solutions required,2024-10-03T16:11:26,2024-10-03T16:11:26,,2,Open,John Watson,,2,17-AUG-24 04.11.26.097513 PM +00:00
+X@GMAIL.COM,17-AUG-24 04.11.26.115764 PM +00:00,MX@GMAIL.COM,5,2,2,Install in development environment,2024-09-29T16:11:26,2024-09-29T16:11:26,,5,0,John Watson,,2,17-AUG-24 04.11.26.098566 PM +00:00
+X@GMAIL.COM,17-AUG-24 04.11.26.115780 PM +00:00,MXL@GMAIL.COM,6,5,2,Train developers / users,2024-09-29T16:11:26,2024-10-03T16:11:26,,1,0,,,2,17-AUG-24 04.11.26.099621 PM +00:00
+X@GMAIL.COM,17-AUG-24 04.11.26.115796 PM +00:00,MX@GMAIL.COM,7,5,3,Complete plan,2024-10-17T16:11:26,,,2,Open,Mark Nile,,2,17-AUG-24 04.11.26.100661 PM +00:00
+X@GMAIL.COM,17-AUG-24 04.11.26.115812 PM +00:00,MUX@GMAIL.COM,8,5,3,Check software licenses,2024-10-18T16:11:26,,,2,Open,Mark Nile,,2,17-AUG-24 04.11.26.101697 PM +00:00
+XIL@GMAIL.COM,17-AUG-24 04.11.26.115828 PM +00:00,MUXL@GMAIL.COM,9,5,3,Purchase backup server,2024-10-20T16:11:26,,,1,Open,Mark Nile,,2,17-AUG-24 04.11.26.102772 PM +00:00
+
+
+TREE QUERY
+select case when connect_by_isleaf = 1 then 0
+            when level = 1             then 1
+            else                           -1
+       end as status, 
+       level, 
+       label||': '||name as title, 
+       case when item_type = 'P' then 'fa-file-text-o'
+            when item_type = 'S' then 'fa-caret-square-o-right'
+            when item_type = 'T' then 'fa-minus-square-o'
+       else null
+       end as icon, 
+       id as value, 
+       case when tooltip is not null then name||' - '||tooltip||'% complete'
+            else name
+       end as tooltip,
+       case when item_type = 'P' then 
+               apex_util.prepare_url('f?p='||:app_id||':7:'||:app_session||':T:::P12_SELECTED_NODE,P7_PROJ_ID:'||id||','||id)
+            when item_type = 'T' then
+               apex_util.prepare_url('f?p='||:app_id||':9:'||:app_session||':T:::P12_SELECTED_NODE,P9_PROJ_ID,P9_TASK_ID:'||id||','||link)
+            when item_type = 'S' then 
+               apex_util.prepare_url('f?p='||:app_id||':10:'||:app_session||':T:::P12_SELECTED_NODE,P10_PROJ_ID,P10_ROWID:'||id||','||link)
+       end as link 
+ from (
+select 'P' item_type,
+       t.label label,
+       to_char(a.PROJ_ID) id,
+       null parent,
+       a.project_name name,
+       a.status tooltip,
+       null link
+  from eba_demo_tree_projects a, (select wwv_flow_lang.system_message('PROJECT') label from dual) t
+union all
+select 'T' item_type,
+       u.label label,
+       to_char(b.proj_id)||'-'||to_char(b.task_id) id,
+       to_char(b.proj_id) parent,
+       b.task_name name,
+       null tooltip,
+       b.proj_id||','||b.task_id link
+  from eba_demo_tree_task b, (select wwv_flow_lang.system_message('TASK') label from dual) u
+union all
+select 'S' item_type,
+       v.label label,
+       to_char(c.proj_id)||'-'||to_char(c.task_id)||'-'||to_char(c.sub_id) id,
+       to_char(c.proj_id)||'-'||to_char(c.task_id) parent,
+       c.sub_name name,
+       null tooltip,
+       c.proj_id||','||c.rowid link
+  from eba_demo_tree_subtask c, (select wwv_flow_lang.system_message('SUBTASK') label from dual) v
+)
+start with parent is null
+connect by prior id = parent
+order siblings by name
+
+
+
+
+
+
