@@ -1,0 +1,32 @@
+begin
+    for i in (select *
+                 from BLOB_TEST
+                where ID= :IMAGE_ID) loop
+        --
+        sys.htp.init;
+        sys.owa_util.mime_header( i.mime_type, FALSE );
+        sys.htp.p('Content-length: ' || sys.dbms_lob.getlength( i.image ));
+        sys.htp.p('Content-Disposition: attachment; inline="Download_Image.JPG"' );
+        sys.htp.p('Cache-Control: max-age=3600');  -- tell the browser to cache for one hour, adjust as necessary
+        sys.owa_util.http_header_close;
+        sys.wpg_docload.download_file( i.image );
+     
+        apex_application.stop_apex_engine;
+    end loop;
+end;
+
+
+  CREATE TABLE "BLOB_TEST" 
+   (	"IMAGE" BLOB, 
+	"MIME_TYPE" VARCHAR2(500), 
+	"FILE_NAME" VARCHAR2(100), 
+	"ID" NUMBER, 
+	"RESPONSE" CLOB
+   ) ;
+
+----------------------------------------------------------
+
+function basicPopup(url) 
+{
+popupWindow = window.open(url,'popUpWindow','height=500,width=700,left=325,top=75,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+}
