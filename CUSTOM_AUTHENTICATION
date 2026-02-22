@@ -1,0 +1,30 @@
+ CREATE TABLE "USERS" 
+   ("USERID" VARCHAR2(10) NOT NULL ENABLE, 
+	"USERNAME" VARCHAR2(55), 
+	"PASSWORD" VARCHAR2(255), 
+	"FULL_NAME" VARCHAR2(185), 
+	"ACTIVE" CHAR(1) DEFAULT 'Y' NOT NULL ENABLE
+   ) ;
+
+/
+create or replace function F_CUSTOM_AUTHENTICATION(p_username in VARCHAR2,
+                                   p_password in VARCHAR2) return BOOLEAN is
+    V_USERID    varchar2(20);
+    v_full_name varchar2(200);
+  begin
+    select USERID, full_name
+      INTO V_USERID, v_full_name
+      from USERS
+     WHERE ACTIVE = 'Y'
+       and upper(USERNAME) = upper(p_username) and PASSWORD = p_password;
+
+    APEX_UTIL.SET_SESSION_STATE(p_name => 'G_USER_ID', p_value => V_USERID);
+    APEX_UTIL.SET_SESSION_STATE(p_name  => 'G_FULL_NAME', p_value => v_full_name);
+  
+    return true;
+  EXCEPTION
+    when NO_DATA_FOUND THEN
+      RETURN FALSE;
+    
+  end F_CUSTOM_AUTHENTICATION;
+/
