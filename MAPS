@@ -1,0 +1,88 @@
+  CREATE TABLE "SAMPLE_MAPS" 
+   ("ID" NUMBER, 
+	"LATITUDE" NUMBER, 
+	"LONGITUDE" NUMBER, 
+	"NAME" VARCHAR2(500 CHAR)
+   );
+
+alter table SAMPLE_MAPS add geometry MDSYS.SDO_GEOMETRY;
+
+UPDATE SAMPLE_MAPS SET GEOMETRY = 
+  SDO_GEOMETRY(
+    2001,
+    8307,
+    SDO_POINT_TYPE(LONGITUDE, LATITUDE, NULL),
+    NULL,
+    NULL
+   );
+
+
+---------------------------------
+[
+    {
+        "id": "1",
+        "latitude": "21.422510",
+        "longitude": "39.826168",
+        "NAME": "Mecca, Saudi Arabia"
+    },
+    {
+        "id": "2",
+        "latitude": "24.470901",
+        "longitude": "39.612236",
+        "NAME": "Medina, Saudi Arabia"
+    },
+    {
+        "id": "3",
+        "latitude": "31.582045",
+        "longitude": "74.329376",
+        "NAME": "Lahore, Pakistan"
+    },
+    {
+        "id": "4",
+        "latitude": "30.677717",
+        "longitude": "73.106812",
+        "NAME": "Sahiwal, Pakistan"
+    },
+    {
+        "id": "5",
+        "latitude": "33.738045",
+        "longitude": "73.084488",
+        "NAME": "Islamabad, Pakistan"
+    },
+    {
+        "id": "6",
+        "latitude": "25.276987",
+        "longitude": "55.296249",
+        "NAME": "Dubai, United Arab Emirates"
+    },
+    {
+        "id": "7",
+        "latitude": "24.466667",
+        "longitude": "54.366669",
+        "NAME": "Abu Dhabi, United Arab Emirates"
+    },
+    {
+        "id": "8",
+        "latitude": "23.614328",
+        "longitude": "58.545284",
+        "NAME": "Muscat, Oman"
+    },
+    {
+        "id": "8",
+        "latitude": "23.614328",
+        "longitude": "58.545284",
+        "NAME": "Muscat, Oman"
+    },
+    {
+        "id": "9",
+        "latitude": "18.922064",
+        "longitude": "72.834641",
+        "NAME": "Mumbai, India"
+    },
+    {
+        "id": "10",
+        "latitude": "28.644800",
+        "longitude": "77.216721",
+        "NAME": "Delhi, India"
+    }
+]
