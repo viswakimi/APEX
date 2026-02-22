@@ -1,4 +1,156 @@
+  CREATE TABLE "EBA_DEMO_TREE_PROJECTS" 
+   (	"PROJ_ID" NUMBER NOT NULL ENABLE, 
+	"PROJECT_NAME" VARCHAR2(4000) NOT NULL ENABLE, 
+	"START_DATE" DATE, 
+	"ESTIMATED_COMPLETION" DATE, 
+	"COMPLETION_DATE" DATE, 
+	"STATUS" NUMBER, 
+	"DESCRIPTION" CLOB, 
+	"ROW_VERSION_NUMBER" NUMBER, 
+	"CREATED" TIMESTAMP (6) WITH TIME ZONE, 
+	"CREATED_BY" VARCHAR2(255), 
+	"UPDATED" TIMESTAMP (6) WITH TIME ZONE, 
+	"UPDATED_BY" VARCHAR2(255), 
+	 CONSTRAINT "EBA_DEMO_TREE_PROJ_PK" PRIMARY KEY ("PROJ_ID")
+  USING INDEX  ENABLE
+   ) ;
 
+  CREATE OR REPLACE EDITIONABLE TRIGGER "BIU_EBA_DEMO_TREE_PROJ" 
+   before insert or update on eba_demo_tree_projects
+   for each row
+begin  
+   if :new."PROJ_ID" is null then
+     select to_number(sys_guid(),'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX') into :new.proj_id from dual;
+   end if;
+   if inserting then
+       :new.created := current_timestamp;
+       :new.created_by := nvl(wwv_flow.g_user,user);
+       :new.updated := current_timestamp;
+       :new.updated_by := nvl(wwv_flow.g_user,user);
+   end if;
+   if inserting or updating then
+       :new.updated := current_timestamp;
+       :new.updated_by := nvl(wwv_flow.g_user,user);
+   end if;
+   if inserting then
+       :new.row_version_number := 1;
+   elsif updating then
+       :new.row_version_number := nvl(:old.row_version_number,1) + 1;
+   end if;
+end;
+/
+ALTER TRIGGER "BIU_EBA_DEMO_TREE_PROJ" ENABLE;
+----------------------------------------------------------------------------
+
+
+  CREATE TABLE "EBA_DEMO_TREE_TASK" 
+   (	"TASK_ID" NUMBER NOT NULL ENABLE, 
+	"PROJ_ID" NUMBER NOT NULL ENABLE, 
+	"TASK_NAME" VARCHAR2(4000), 
+	"TASK_START" DATE, 
+	"TASK_EST_COMP" DATE, 
+	"TASK_COMP" DATE, 
+	"TASK_PRIORITY" NUMBER, 
+	"TASK_STATUS" NUMBER, 
+	"TASK_ASSIGN" NUMBER, 
+	"TASK_DESC" CLOB, 
+	"ROW_VERSION_NUMBER" NUMBER, 
+	"CREATED" TIMESTAMP (6) WITH TIME ZONE, 
+	"CREATED_BY" VARCHAR2(255), 
+	"UPDATED" TIMESTAMP (6) WITH TIME ZONE, 
+	"UPDATED_BY" VARCHAR2(255), 
+	 CONSTRAINT "EBA_DEMO_TREE_TASK_PK" PRIMARY KEY ("TASK_ID")
+  USING INDEX  ENABLE
+   ) ;
+
+  ALTER TABLE "EBA_DEMO_TREE_TASK" ADD CONSTRAINT "EBA_DEMO_TREE_TASK_FK" FOREIGN KEY ("PROJ_ID")
+	  REFERENCES "EBA_DEMO_TREE_PROJECTS" ("PROJ_ID") ON DELETE CASCADE ENABLE;
+
+  CREATE INDEX "EBA_DEMO_TREE_TASK_IDX1" ON "EBA_DEMO_TREE_TASK" ("PROJ_ID") 
+  ;
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "BIU_EBA_DEMO_TREE_TASK" 
+   before insert or update on eba_demo_tree_task
+   for each row
+begin  
+   if :new."TASK_ID" is null then
+     select max(task_id)+1 into :new.task_id from eba_demo_tree_task;
+   end if;
+   if inserting then
+       :new.created := current_timestamp;
+       :new.created_by := nvl(wwv_flow.g_user,user);
+       :new.updated := current_timestamp;
+       :new.updated_by := nvl(wwv_flow.g_user,user);
+   end if;
+   if inserting or updating then
+       :new.updated := current_timestamp;
+       :new.updated_by := nvl(wwv_flow.g_user,user);
+   end if;
+   if inserting then
+       :new.row_version_number := 1;
+   elsif updating then
+       :new.row_version_number := nvl(:old.row_version_number,1) + 1;
+   end if;
+end;
+/
+ALTER TRIGGER "BIU_EBA_DEMO_TREE_TASK" ENABLE;
+---------------------------------------------------------
+
+
+  CREATE TABLE "EBA_DEMO_TREE_SUBTASK" 
+   (	"SUB_ID" NUMBER NOT NULL ENABLE, 
+	"PROJ_ID" NUMBER NOT NULL ENABLE, 
+	"TASK_ID" NUMBER NOT NULL ENABLE, 
+	"SUB_NAME" VARCHAR2(4000), 
+	"SUB_START" DATE, 
+	"SUB_EST_COMP" DATE, 
+	"SUB_COMP" DATE, 
+	"SUB_PRIORITY" VARCHAR2(400), 
+	"SUB_STATUS" VARCHAR2(400), 
+	"SUB_ASSIGN" VARCHAR2(400), 
+	"SUB_DESC" CLOB, 
+	"ROW_VERSION_NUMBER" NUMBER, 
+	"CREATED" TIMESTAMP (6) WITH TIME ZONE, 
+	"CREATED_BY" VARCHAR2(255), 
+	"UPDATED" TIMESTAMP (6) WITH TIME ZONE, 
+	"UPDATED_BY" VARCHAR2(255), 
+	 CONSTRAINT "EBA_DEMO_TREE_SUBTASK_PK" PRIMARY KEY ("SUB_ID", "PROJ_ID", "TASK_ID")
+  USING INDEX  ENABLE
+   ) ;
+
+  CREATE INDEX "EBA_DEMO_TREE_SUBTASK_IDX1" ON "EBA_DEMO_TREE_SUBTASK" ("TASK_ID") 
+  ;
+
+  CREATE INDEX "EBA_DEMO_TREE_SUBTASK_IDX2" ON "EBA_DEMO_TREE_SUBTASK" ("PROJ_ID") 
+  ;
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "BIU_EBA_DEMO_TREE_SUBTASK" 
+   before insert or update on eba_demo_tree_subtask
+    for each row
+begin  
+   if :new."SUB_ID" is null then
+     select to_number(sys_guid(),'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX') into :new.sub_id from dual;
+   end if;
+   if inserting then
+       :new.created := current_timestamp;
+       :new.created_by := nvl(wwv_flow.g_user,user);
+       :new.updated := current_timestamp;
+       :new.updated_by := nvl(wwv_flow.g_user,user);
+   end if;
+   if inserting or updating then
+       :new.updated := current_timestamp;
+       :new.updated_by := nvl(wwv_flow.g_user,user);
+   end if;
+   if inserting then
+       :new.row_version_number := 1;
+   elsif updating then
+       :new.row_version_number := nvl(:old.row_version_number,1) + 1;
+   end if;
+end;
+/
+ALTER TRIGGER "BIU_EBA_DEMO_TREE_SUBTASK" ENABLE;
+
+----------------------
 DEMO TREE PROJ
 2012-02-17T00:00:00,,70,,1,17-AUG-24 04.11.25.869031 PM +00:00,XXXX@GMAIL.COM,17-AUG-24 04.11.25.869156 PM +00:00,XXXX@GMAIL.COM,2,Training,2012-02-13T00:00:00
 ,,80,,1,17-AUG-24 04.11.25.871240 PM +00:00,XXXX@GMAIL.COM,17-AUG-24 04.11.25.871257 PM +00:00,XXXX@GMAIL.COM,3,Software Project Tracking,2012-01-09T00:00:00
